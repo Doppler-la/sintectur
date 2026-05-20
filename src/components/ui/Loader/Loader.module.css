@@ -2,20 +2,12 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: linear-gradient(160deg, #010626 0%, #020b3b 40%, #011240 70%, #01193d 100%);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.5s ease;
-}
-
-.loader::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(242,189,31,0.12) 0%, transparent 70%);
-  pointer-events: none;
+  transition: opacity 0.6s ease;
 }
 
 .hidden {
@@ -23,44 +15,53 @@
   pointer-events: none;
 }
 
-.logo {
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--cloud);
-  position: relative;
-  z-index: 1;
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 
-.tagline {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-top: 10px;
-  position: relative;
-  z-index: 1;
+.turbine {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo {
+  width: clamp(260px, 40vw, 480px);
+  height: auto;
+  margin-top: 20px;
+  display: block;
 }
 
 .barTrack {
-  width: 260px;
-  height: 2px;
-  background: rgba(255,255,255,0.12);
-  border-radius: 2px;
-  margin-top: 28px;
-  overflow: hidden;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: rgba(1, 6, 38, 0.12);
 }
 
 .bar {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, var(--sky), var(--gold));
-  border-radius: 2px;
   animation: loaderFill 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes loaderFill {
   0%   { width: 0%; }
   100% { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .turbine {
+    width: 200px;
+    height: 200px;
+  }
 }

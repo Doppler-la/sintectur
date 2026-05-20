@@ -25,7 +25,9 @@ export default function Nav() {
           <span /><span /><span />
         </button>
 
-        <Link to="/" className={styles.logo} onClick={closeMenu}>Sintectur</Link>
+        <Link to="/" className={styles.logo} onClick={closeMenu}>
+          <img src="/Logo_sintectur_blanco.png" alt="Sintectur" />
+        </Link>
 
         <button className={styles.ctaNav} onClick={() => openModal('contacto')}>
           Contacto →

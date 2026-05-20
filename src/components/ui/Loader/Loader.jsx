@@ -6,7 +6,7 @@ export default function Loader({ visible }) {
 
   useEffect(() => {
     if (!visible) {
-      const t = setTimeout(() => setMounted(false), 500)
+      const t = setTimeout(() => setMounted(false), 600)
       return () => clearTimeout(t)
     }
   }, [visible])
@@ -15,10 +15,9 @@ export default function Loader({ visible }) {
 
   return (
     <div className={`${styles.loader} ${!visible ? styles.hidden : ''}`}>
-      <div className={styles.logo}>Sintectur</div>
-      <div className={styles.tagline}>Travel &amp; Events — Buenos Aires</div>
-      <div className={styles.barTrack}>
-        <div className={styles.bar} />
+      <div className={styles.center}>
+        <img src="/Loader_GIf.gif" alt="Turbina" className={styles.turbine} />
+        <img src="/Logo_sintectur_color.png" alt="Sintectur" className={styles.logo} />
       </div>
     </div>
   )
