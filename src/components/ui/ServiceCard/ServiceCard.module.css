@@ -1,12 +1,12 @@
 .card {
-  background: var(--white);
+  background: #ffffff;
   padding: 48px 40px;
   position: relative;
   overflow: hidden;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
-.card:hover { background: #fafafa; }
+.card:hover { background: #faf8f5; box-shadow: 0 4px 24px rgba(1,6,38,0.07); }
 
 .icon {
   width: 48px;
@@ -46,12 +46,12 @@
 
 .link::after { content: ' →'; }
 
-.icBlue   { background: #eff6ff; }
-.icPurple { background: #f5f3ff; }
-.icGreen  { background: #f0fdf4; }
-.icAmber  { background: #fffbeb; }
-.icRose   { background: #fff1f2; }
-.icSky    { background: #f0f9ff; }
+.icBlue   { background: #deedf9; }
+.icPurple { background: #e8eeff; }
+.icGreen  { background: #e6f4e6; }
+.icAmber  { background: #fef4d0; }
+.icRose   { background: #fde3ec; }
+.icSky    { background: #ddf0fc; }
 
 @media (max-width: 768px) {
   .card { padding: 36px 28px; }

@@ -2,9 +2,13 @@ import { useState, useEffect } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Loader from './components/ui/Loader/Loader'
 import Home from './pages/Home'
+import Portfolio from './pages/Portfolio'
+import Inspirate from './pages/Inspirate'
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
+  { path: '/',          element: <Home /> },
+  { path: '/portfolio', element: <Portfolio /> },
+  { path: '/inspirate', element: <Inspirate /> },
 ])
 
 export default function App() {

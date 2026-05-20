@@ -1,67 +1,89 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Nav.module.css'
-import { NAV_LINKS } from '../../../data/nav'
+import { SERVICES } from '../../../data/services'
+import ContactoModal from './ContactoModal'
+import CarreraModal from './CarreraModal'
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [submenuOpen, setSubmenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen]       = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [modal, setModal]             = useState(null) // 'contacto' | 'carrera'
 
-  const handleToggle = () => {
-    const next = !menuOpen
-    setMenuOpen(next)
-    if (!next) setSubmenuOpen(false)
-  }
-
-  const handleServiceClick = (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault()
-      setSubmenuOpen((v) => !v)
-    }
-  }
+  const closeMenu  = () => { setMenuOpen(false); setServicesOpen(false) }
+  const openModal  = (m) => { closeMenu(); setModal(m) }
 
   return (
-    <nav className={styles.nav}>
-      <div className={styles.logo}>Sintectur</div>
+    <>
+      {/* ── barra fija ──────────────────────────────────────── */}
+      <nav className={styles.nav}>
+        <button
+          className={`${styles.toggle} ${menuOpen ? styles.toggleOpen : ''}`}
+          onClick={() => { setMenuOpen(v => !v); setServicesOpen(false) }}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+        >
+          <span /><span /><span />
+        </button>
 
-      <ul className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
-        {NAV_LINKS.map((link) =>
-          link.submenu ? (
-            <li
-              key={link.label}
-              className={`${styles.hasSubmenu} ${submenuOpen ? styles.submenuOpen : ''}`}
+        <Link to="/" className={styles.logo} onClick={closeMenu}>Sintectur</Link>
+
+        <button className={styles.ctaNav} onClick={() => openModal('contacto')}>
+          Contacto →
+        </button>
+      </nav>
+
+      {/* ── overlay fullscreen ──────────────────────────────── */}
+      <div className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ''}`}>
+        <ul className={styles.mainLinks}>
+
+          {/* Servicios */}
+          <li className={styles.mainItem} style={{ '--i': 0 }}>
+            <button
+              className={`${styles.menuItem} ${servicesOpen ? styles.menuItemActive : ''}`}
+              onClick={() => setServicesOpen(v => !v)}
             >
-              <a href={link.href} className={styles.navParent} onClick={handleServiceClick}>
-                {link.label} <span className={styles.arrow}>▾</span>
-              </a>
-              <ul className={styles.submenu}>
-                {link.submenu.map((item) => (
-                  <li key={item}>
-                    <a href="#">{item}</a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ) : (
-            <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          )
-        )}
-      </ul>
+              Servicios
+              <span className={`${styles.arrow} ${servicesOpen ? styles.arrowOpen : ''}`}>↓</span>
+            </button>
+            <div className={`${styles.servicesAccordion} ${servicesOpen ? styles.servicesOpen : ''}`}>
+              <div>
+                <ul className={styles.servicesList}>
+                  {SERVICES.map(s => (
+                    <li key={s.title}>
+                      <Link to="/#servicios" onClick={closeMenu}>{s.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </li>
 
-      <a className={styles.ctaNav} href="#">
-        Contacto →
-      </a>
+          {/* Portfolio */}
+          <li className={styles.mainItem} style={{ '--i': 1 }}>
+            <Link className={styles.menuItem} to="/portfolio" onClick={closeMenu}>Portfolio</Link>
+          </li>
 
-      <button
-        className={`${styles.toggle} ${menuOpen ? styles.toggleOpen : ''}`}
-        onClick={handleToggle}
-        aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-    </nav>
+          {/* Contacto */}
+          <li className={styles.mainItem} style={{ '--i': 2 }}>
+            <button className={styles.menuItem} onClick={() => openModal('contacto')}>Contacto</button>
+          </li>
+
+          {/* Carrera */}
+          <li className={styles.mainItem} style={{ '--i': 3 }}>
+            <button className={styles.menuItem} onClick={() => openModal('carrera')}>Carrera</button>
+          </li>
+
+          {/* Inspírate */}
+          <li className={styles.mainItem} style={{ '--i': 4 }}>
+            <Link className={styles.menuItem} to="/inspirate" onClick={closeMenu}>Inspírate</Link>
+          </li>
+
+        </ul>
+      </div>
+
+      {/* ── modales ─────────────────────────────────────────── */}
+      {modal === 'contacto' && <ContactoModal onClose={() => setModal(null)} />}
+      {modal === 'carrera'  && <CarreraModal  onClose={() => setModal(null)} />}
+    </>
   )
 }

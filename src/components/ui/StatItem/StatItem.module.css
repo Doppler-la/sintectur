@@ -11,6 +11,9 @@
   margin-top: 2px;
 }
 
+.dark h4 { color: var(--cloud); }
+.dark p  { color: rgba(249,244,240,0.5); }
+
 @media (max-width: 480px) {
   .item h4 { font-size: 28px; }
 }

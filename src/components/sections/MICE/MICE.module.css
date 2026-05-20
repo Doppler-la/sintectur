@@ -1,6 +1,6 @@
 .section {
-  background: var(--black);
-  color: var(--white);
+  background: transparent;
+  color: var(--cloud);
   text-align: center;
   padding: 120px 40px;
   position: relative;
@@ -11,7 +11,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(99,102,241,0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(95,156,232,0.2) 0%, transparent 70%);
 }
 
 .chips {

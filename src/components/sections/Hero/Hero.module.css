@@ -1,6 +1,6 @@
 .hero {
   height: 100vh;
-  background: linear-gradient(160deg, #0a0a0a 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
+  background: linear-gradient(160deg, #010626 0%, #020b3b 40%, #011240 70%, #01193d 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,113,227,0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(242,189,31,0.12) 0%, transparent 70%);
   z-index: 1;
 }
 
@@ -48,13 +48,13 @@
   font-weight: 700;
   letter-spacing: -2px;
   line-height: 1.02;
-  color: #f5f5f7;
+  color: var(--cloud);
   max-width: 900px;
 }
 
 .title em {
   font-style: normal;
-  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  background: linear-gradient(90deg, var(--sky), var(--gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

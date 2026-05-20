@@ -7,7 +7,7 @@
   margin-bottom: 12px;
 }
 
-.labelDark { color: #a78bfa; }
+.labelDark { color: var(--sky); }
 
 .title {
   font-size: clamp(32px, 4vw, 52px);
@@ -17,7 +17,7 @@
   color: var(--black);
 }
 
-.titleDark { color: #ffffff; }
+.titleDark { color: var(--cloud); }
 
 .sub {
   margin-top: 14px;
@@ -29,4 +29,4 @@
 
 .subCentered { margin: 14px auto 0; }
 
-.subDark { color: rgba(255,255,255,0.5); }
+.subDark { color: rgba(249,244,240,0.5); }
