@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <video className={styles.video} autoPlay muted loop playsInline>
-        <source src="/Freeman.com-Website-Header-11_2025-v3-1.mp4" type="video/mp4" />
+        <source src="/Video_Hero.mp4" type="video/mp4" />
       </video>
 
       <h1 className={styles.title}>
