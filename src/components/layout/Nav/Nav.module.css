@@ -6,18 +6,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  height: 64px;
+  padding: 16px 40px 0;
+  padding-bottom: 16px;
+  height: 80px;
+  background: transparent;
 }
 
-.nav::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 160px;
-  background: linear-gradient(to bottom, rgba(1,6,38,0.82) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: -1;
+
+.navScrolled {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%);
+  transition: background 0.3s ease;
 }
 
 .logo {
@@ -30,25 +28,44 @@
 }
 
 .logo img {
-  height: 52px;
+  height: 36px;
   width: auto;
   display: block;
 }
 
-.ctaNav {
-  font-size: 13px;
-  color: var(--gold);
-  font-weight: 600;
+/* ── derecha: acceder + idioma ───────────────────────────────── */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navAction {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cloud);
   background: none;
   border: none;
   cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s;
 }
+
+.navAction:hover { opacity: 0.7; }
+
+/* ocultar logo, toggle y acciones cuando el menú está abierto */
+.logoHidden { visibility: hidden; opacity: 0; transition: opacity 0.2s; }
+.navRightHidden { visibility: hidden; opacity: 0; transition: opacity 0.2s; }
+.toggleHidden { visibility: hidden; opacity: 0; transition: opacity 0.2s; }
 
 /* ── hamburger ──────────────────────────────────────────────── */
 .toggle {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
   padding: 4px;
   background: none;
@@ -56,7 +73,13 @@
   z-index: 1;
 }
 
-.toggle span {
+.toggleLines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.toggleLines span {
   display: block;
   width: 22px;
   height: 2px;
@@ -65,17 +88,27 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.toggleOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.toggleOpen span:nth-child(2) { opacity: 0; }
-.toggleOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.toggleLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cloud);
+  letter-spacing: 0.01em;
+}
+
+.toggleOpen .toggleLines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.toggleOpen .toggleLines span:nth-child(2) { opacity: 0; }
+.toggleOpen .toggleLines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── overlay fullscreen ──────────────────────────────────────── */
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 150;
-  background: var(--navy);
+  z-index: 250;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -87,6 +120,25 @@
   opacity: 1;
   visibility: visible;
 }
+
+/* X de cerrar — arriba derecha */
+.closeBtn {
+  position: absolute;
+  top: 28px;
+  right: 40px;
+  z-index: 210;
+  background: none;
+  border: none;
+  color: var(--cloud);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.closeBtn:hover { opacity: 1; }
 
 /* ── links principales ──────────────────────────────────────── */
 .mainLinks {
@@ -106,10 +158,7 @@
   transform: translateY(24px);
   transition: opacity 0.4s ease, transform 0.4s ease;
   transition-delay: calc(var(--i) * 0.07s + 0.1s);
-  border-bottom: 1px solid rgba(249,244,240,0.07);
 }
-
-.mainItem:first-child { border-top: 1px solid rgba(249,244,240,0.07); }
 
 .overlayOpen .mainItem {
   opacity: 1;
@@ -121,22 +170,22 @@
   align-items: center;
   gap: 14px;
   font-size: clamp(32px, 5vw, 60px);
-  font-weight: 700;
-  letter-spacing: -1.5px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
   line-height: 1;
   color: var(--cloud);
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 20px 0;
+  padding: 16px 0;
   transition: color 0.2s ease;
   width: 100%;
   justify-content: center;
 }
 
 .menuItem:hover,
-.menuItemActive { color: var(--gold); }
+.menuItemActive { color: rgba(255, 255, 255, 0.45); }
 
 .arrow {
   font-size: 0.5em;
@@ -181,9 +230,38 @@
 
 .servicesList a:hover { color: var(--sky); }
 
+/* ── acciones dentro del overlay (mobile) ───────────────────── */
+.overlayActions {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 40px 40px;
+}
+
+.overlayAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cloud);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.overlayAction:hover { opacity: 1; }
+
 /* ── mobile ─────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav { padding: 0 20px; }
+  .toggleLabel { display: none; }
+  .navAction { font-size: 12px; gap: 4px; }
+  .navRight { display: none; }
+  .overlayActions { display: flex; }
 
   .mainLinks { padding: 80px 24px 40px; }
 

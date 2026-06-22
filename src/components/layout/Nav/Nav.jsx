@@ -1,89 +1,97 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { CircleUser, Globe } from 'lucide-react'
 import styles from './Nav.module.css'
-import { SERVICES } from '../../../data/services'
 import ContactoModal from './ContactoModal'
 import CarreraModal from './CarreraModal'
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen]       = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const [modal, setModal]             = useState(null) // 'contacto' | 'carrera'
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [modal, setModal]       = useState(null)
+  const [scrolled, setScrolled] = useState(false)
 
-  const closeMenu  = () => { setMenuOpen(false); setServicesOpen(false) }
-  const openModal  = (m) => { closeMenu(); setModal(m) }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const closeMenu = () => setMenuOpen(false)
+  const openModal = (m) => { closeMenu(); setModal(m) }
 
   return (
     <>
       {/* ── barra fija ──────────────────────────────────────── */}
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${scrolled ? styles.navScrolled : ''}`}>
+        {/* izquierda: hamburger + "Menú" */}
         <button
-          className={`${styles.toggle} ${menuOpen ? styles.toggleOpen : ''}`}
-          onClick={() => { setMenuOpen(v => !v); setServicesOpen(false) }}
+          className={`${styles.toggle} ${menuOpen ? styles.toggleOpen : ''} ${menuOpen ? styles.toggleHidden : ''}`}
+          onClick={() => setMenuOpen(v => !v)}
           aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <span /><span /><span />
+          <span className={styles.toggleLines}>
+            <span /><span /><span />
+          </span>
+          <span className={styles.toggleLabel}>Menú</span>
         </button>
 
-        <Link to="/" className={styles.logo} onClick={closeMenu}>
-          <img src="/Logo_sintectur_blanco.png" alt="Sintectur" />
+        {/* centro: logo */}
+        <Link to="/" className={`${styles.logo} ${menuOpen ? styles.logoHidden : ''}`} onClick={closeMenu}>
+          <img src="/logov1.png" alt="Sintectur" />
         </Link>
 
-        <button className={styles.ctaNav} onClick={() => openModal('contacto')}>
-          Contacto →
-        </button>
+        {/* derecha: Acceder + Idioma */}
+        <div className={`${styles.navRight} ${menuOpen ? styles.navRightHidden : ''}`}>
+          <button className={styles.navAction} onClick={() => openModal('contacto')}>
+            <CircleUser size={18} strokeWidth={1.8} />
+            Acceder
+          </button>
+          <button className={styles.navAction}>
+            <Globe size={18} strokeWidth={1.8} />
+            Idioma
+          </button>
+        </div>
       </nav>
 
       {/* ── overlay fullscreen ──────────────────────────────── */}
       <div className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ''}`}>
+        <button className={styles.closeBtn} onClick={closeMenu} aria-label="Cerrar menú">✕</button>
         <ul className={styles.mainLinks}>
 
-          {/* Servicios */}
           <li className={styles.mainItem} style={{ '--i': 0 }}>
-            <button
-              className={`${styles.menuItem} ${servicesOpen ? styles.menuItemActive : ''}`}
-              onClick={() => setServicesOpen(v => !v)}
-            >
-              Servicios
-              <span className={`${styles.arrow} ${servicesOpen ? styles.arrowOpen : ''}`}>↓</span>
-            </button>
-            <div className={`${styles.servicesAccordion} ${servicesOpen ? styles.servicesOpen : ''}`}>
-              <div>
-                <ul className={styles.servicesList}>
-                  {SERVICES.map(s => (
-                    <li key={s.title}>
-                      <Link to="/#servicios" onClick={closeMenu}>{s.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <Link className={styles.menuItem} to="/productos" onClick={closeMenu}>Productos</Link>
           </li>
 
-          {/* Portfolio */}
           <li className={styles.mainItem} style={{ '--i': 1 }}>
-            <Link className={styles.menuItem} to="/portfolio" onClick={closeMenu}>Portfolio</Link>
+            <Link className={styles.menuItem} to="/portfolio" onClick={closeMenu}>Nuestro trabajo</Link>
           </li>
 
-          {/* Contacto */}
           <li className={styles.mainItem} style={{ '--i': 2 }}>
-            <button className={styles.menuItem} onClick={() => openModal('contacto')}>Contacto</button>
-          </li>
-
-          {/* Carrera */}
-          <li className={styles.mainItem} style={{ '--i': 3 }}>
-            <button className={styles.menuItem} onClick={() => openModal('carrera')}>Carrera</button>
-          </li>
-
-          {/* Inspírate */}
-          <li className={styles.mainItem} style={{ '--i': 4 }}>
             <Link className={styles.menuItem} to="/inspirate" onClick={closeMenu}>Inspírate</Link>
           </li>
 
+          <li className={styles.mainItem} style={{ '--i': 3 }}>
+            <button className={styles.menuItem} onClick={() => openModal('contacto')}>Contacto</button>
+          </li>
+
+          <li className={styles.mainItem} style={{ '--i': 4 }}>
+            <button className={styles.menuItem} onClick={() => openModal('carrera')}>Carrera</button>
+          </li>
+
         </ul>
+
+        <div className={styles.overlayActions}>
+          <button className={styles.overlayAction} onClick={() => openModal('contacto')}>
+            <CircleUser size={18} strokeWidth={1.8} />
+            Acceder
+          </button>
+          <button className={styles.overlayAction}>
+            <Globe size={18} strokeWidth={1.8} />
+            Idioma
+          </button>
+        </div>
       </div>
 
-      {/* ── modales ─────────────────────────────────────────── */}
       {modal === 'contacto' && <ContactoModal onClose={() => setModal(null)} />}
       {modal === 'carrera'  && <CarreraModal  onClose={() => setModal(null)} />}
     </>

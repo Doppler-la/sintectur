@@ -1,0 +1,77 @@
+.section {
+  background: #000;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 16px;
+  overflow: hidden;
+  min-height: 540px;
+}
+
+.textPanel {
+  background: #f2bd1f;
+  padding: 28px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: clamp(20px, 3vw, 40px);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+
+.imagePanel {
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: unset;
+  }
+
+  .imagePanel {
+    position: relative;
+    aspect-ratio: 4 / 3;
+  }
+
+  .textPanel {
+    padding: 24px 24px 32px;
+    min-height: 280px;
+  }
+}
