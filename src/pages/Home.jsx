@@ -18,6 +18,13 @@ export default function Home() {
       <div data-bg="navy"><ProductosBanner /></div>
       <div data-bg="navy"><ProductosList /></div>
       <div data-bg="navy"><CTADual /></div>
+      <div style={{ background: '#000', padding: '60px 0', lineHeight: 0 }}>
+        <img
+          src="/logov1.png"
+          alt="Sintectur"
+          style={{ width: '100%', display: 'block', opacity: 0.15 }}
+        />
+      </div>
       <div data-bg="navy"><Footer /></div>
     </>
   )
