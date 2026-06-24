@@ -4,11 +4,13 @@ import Loader from './components/ui/Loader/Loader'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Inspirate from './pages/Inspirate'
+import Acceder from './pages/Acceder/Acceder'
 
 const router = createBrowserRouter([
   { path: '/',          element: <Home /> },
   { path: '/portfolio', element: <Portfolio /> },
   { path: '/inspirate', element: <Inspirate /> },
+  { path: '/acceder',   element: <Acceder /> },
 ])
 
 export default function App() {

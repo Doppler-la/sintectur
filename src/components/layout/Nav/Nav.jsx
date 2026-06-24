@@ -42,10 +42,10 @@ export default function Nav() {
 
         {/* derecha: Acceder + Idioma */}
         <div className={`${styles.navRight} ${menuOpen ? styles.navRightHidden : ''}`}>
-          <button className={styles.navAction} onClick={() => openModal('contacto')}>
+          <Link to="/acceder" className={styles.navAction}>
             <CircleUser size={18} strokeWidth={1.8} />
             Acceder
-          </button>
+          </Link>
           <button className={styles.navAction}>
             <Globe size={18} strokeWidth={1.8} />
             Idioma
