@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CircleUser, Globe } from 'lucide-react'
 import styles from './Nav.module.css'
-import ContactoModal from './ContactoModal'
-import CarreraModal from './CarreraModal'
+import { useModal } from '../../../context/ModalContext'
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [modal, setModal]       = useState(null)
   const [scrolled, setScrolled] = useState(false)
+  const { openModal } = useModal()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -16,8 +15,8 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const closeMenu = () => setMenuOpen(false)
-  const openModal = (m) => { closeMenu(); setModal(m) }
+  const closeMenu    = () => setMenuOpen(false)
+  const handleModal  = (m) => { closeMenu(); openModal(m) }
 
   return (
     <>
@@ -42,10 +41,10 @@ export default function Nav() {
 
         {/* derecha: Acceder + Idioma */}
         <div className={`${styles.navRight} ${menuOpen ? styles.navRightHidden : ''}`}>
-          <Link to="/acceder" className={styles.navAction}>
+          <a href="https://sintectcustreporting.azurewebsites.net/Login" target="_blank" rel="noopener noreferrer" className={styles.navAction}>
             <CircleUser size={18} strokeWidth={1.8} />
-            Acceder
-          </Link>
+            Acceso clientes
+          </a>
           <button className={styles.navAction}>
             <Globe size={18} strokeWidth={1.8} />
             Idioma
@@ -59,7 +58,7 @@ export default function Nav() {
         <ul className={styles.mainLinks}>
 
           <li className={styles.mainItem} style={{ '--i': 0 }}>
-            <Link className={styles.menuItem} to="/productos" onClick={closeMenu}>Productos</Link>
+            <Link className={styles.menuItem} to="/productos" onClick={closeMenu}>Servicios</Link>
           </li>
 
           <li className={styles.mainItem} style={{ '--i': 1 }}>
@@ -71,20 +70,20 @@ export default function Nav() {
           </li>
 
           <li className={styles.mainItem} style={{ '--i': 3 }}>
-            <button className={styles.menuItem} onClick={() => openModal('contacto')}>Contacto</button>
+            <button className={styles.menuItem} onClick={() => handleModal('contacto')}>Contacto</button>
           </li>
 
           <li className={styles.mainItem} style={{ '--i': 4 }}>
-            <button className={styles.menuItem} onClick={() => openModal('carrera')}>Carrera</button>
+            <button className={styles.menuItem} onClick={() => handleModal('carrera')}>Carrera</button>
           </li>
 
         </ul>
 
         <div className={styles.overlayActions}>
-          <button className={styles.overlayAction} onClick={() => openModal('contacto')}>
+          <a href="https://sintectcustreporting.azurewebsites.net/Login" target="_blank" rel="noopener noreferrer" className={styles.overlayAction}>
             <CircleUser size={18} strokeWidth={1.8} />
-            Acceder
-          </button>
+            Acceso clientes
+          </a>
           <button className={styles.overlayAction}>
             <Globe size={18} strokeWidth={1.8} />
             Idioma
@@ -92,8 +91,6 @@ export default function Nav() {
         </div>
       </div>
 
-      {modal === 'contacto' && <ContactoModal onClose={() => setModal(null)} />}
-      {modal === 'carrera'  && <CarreraModal  onClose={() => setModal(null)} />}
     </>
   )
 }

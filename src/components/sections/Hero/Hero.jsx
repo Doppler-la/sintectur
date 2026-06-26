@@ -7,7 +7,7 @@ export default function Hero() {
         <h1 className={styles.title}>
           Viajes y<br />
           experiencias<br />
-          customizadas
+          a medida
         </h1>
         <p className={styles.sub}>
           La especialización<br />

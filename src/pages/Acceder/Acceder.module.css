@@ -48,7 +48,7 @@
 }
 
 .ctaCol {
-  background: #000;
+  background: #fff;
   padding: 80px 90px;
 }
 
@@ -125,14 +125,14 @@
 .ctaTitle {
   font-size: 64px;
   font-weight: 500;
-  color: #fff;
-  line-height: 1.1;
+  color: #000;
+  line-height: 1;
 }
 
 .ctaSubtitle {
   font-size: 20px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.65);
+  color: #404040;
   line-height: 1.5;
 }
 

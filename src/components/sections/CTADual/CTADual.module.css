@@ -52,8 +52,14 @@
 .cta {
   font-size: clamp(20px, 2vw, 64px);
   font-weight: 700;
+  font-family: 'Codec Pro', -apple-system, sans-serif;
   text-decoration: none;
   color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
   transition: opacity 0.2s;
 }
 

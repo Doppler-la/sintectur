@@ -1,35 +1,30 @@
+import { Link } from 'react-router-dom'
+import { useModal } from '../../../context/ModalContext'
 import styles from './CTADual.module.css'
 
-const PANELS = [
-  {
-    variant: 'light',
-    label: 'Contacto',
-    title: 'Un pequeño clic, un gran paso hacia tus objetivos.',
-    cta: 'Escribinos',
-    href: '#contacto',
-  },
-  {
-    variant: 'color',
-    label: 'Sobre nosotros',
-    title: 'No empezamos ayer. Sumergite en nuestra historia.',
-    cta: 'Conocenos',
-    href: '#nosotros',
-  },
-]
-
 export default function CTADual() {
+  const { openModal } = useModal()
+
   return (
     <section className={styles.section}>
       <div className={styles.grid}>
-        {PANELS.map((p) => (
-          <div key={p.label} className={`${styles.panel} ${styles[p.variant]}`}>
-            <div className={styles.textGroup}>
-              <span className={styles.label}>{p.label}</span>
-              <h2 className={styles.title}>{p.title}</h2>
-              <a href={p.href} className={styles.cta}>{p.cta}</a>
-            </div>
+
+        <div className={`${styles.panel} ${styles.light}`}>
+          <div className={styles.textGroup}>
+            <span className={styles.label}>Contacto</span>
+            <h2 className={styles.title}>Un pequeño clic, un gran paso hacia tus objetivos.</h2>
+            <button className={styles.cta} onClick={() => openModal('contacto')}>Escribinos</button>
           </div>
-        ))}
+        </div>
+
+        <div className={`${styles.panel} ${styles.color}`}>
+          <div className={styles.textGroup}>
+            <span className={styles.label}>Sobre nosotros</span>
+            <h2 className={styles.title}>No empezamos ayer. Sumergite en nuestra historia.</h2>
+            <Link to="/nosotros" className={styles.cta}>Conocenos</Link>
+          </div>
+        </div>
+
       </div>
     </section>
   )

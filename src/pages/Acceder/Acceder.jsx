@@ -65,7 +65,6 @@ export default function Acceder() {
 
               <div className={styles.btns}>
                 <button className={styles.btn}>Hacenos una consulta</button>
-                <button className={styles.btn}>Carganos tu Brief o RFP</button>
               </div>
 
             </div>

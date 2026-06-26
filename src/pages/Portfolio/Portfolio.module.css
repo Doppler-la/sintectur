@@ -1,0 +1,126 @@
+.page {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── main ────────────────────────────────────────────────────── */
+.main {
+  flex: 1;
+  padding: 160px 60px 100px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── título ──────────────────────────────────────────────────── */
+.title {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
+}
+
+/* ── grid ────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 20px;
+}
+
+/* ── card ────────────────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.thumbnail {
+  position: relative;
+  aspect-ratio: 438 / 216;
+  background: #1a1a1a;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background 0.25s ease;
+}
+
+.card:hover .thumbnail {
+  background: #222;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.playIcon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .playIcon {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+/* ── responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .main {
+    padding: 120px 40px 80px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 100px 24px 64px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 80px 16px 48px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .title {
+    margin-bottom: 32px;
+  }
+}

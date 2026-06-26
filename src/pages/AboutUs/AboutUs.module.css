@@ -1,0 +1,200 @@
+.page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ── Nav spacer ──────────────────────────────────────────────── */
+.navSpacer {
+  height: 90px;
+  background: #000;
+}
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 650px;
+  max-height: 650px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  background: url('/fondo-about-us.jpg') center calc(50% + 260px) / 100% auto no-repeat;
+}
+
+.heroImg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.75) 100%);
+}
+
+.heroTitle {
+  position: relative;
+  z-index: 1;
+  font-size: 12.5vw;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  width: 100%;
+  padding: 0;
+  margin-bottom: -30px;
+  text-align: center;
+}
+
+/* ── Capítulos ───────────────────────────────────────────────── */
+.content {
+  padding: 100px 60px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0 60px;
+  scroll-margin-top: 100px;
+}
+
+.chapterLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+  padding-top: 6px;
+}
+
+.chapterBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.primary {
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.secondary {
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 400;
+  color: rgba(147,147,147,1);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── Fotos ───────────────────────────────────────────────────── */
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.photoCard {
+  background: var(--gold);
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 48px;
+}
+
+.photoCardText {
+  font-size: clamp(40px, 4.5vw, 72px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.photo {
+  height: 480px;
+  background: url('/about-us-pic1.png') center/cover no-repeat;
+}
+
+/* ── Foto full width ─────────────────────────────────────────── */
+.fullPhoto {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 520px;
+  background: url('/about-us-pic2.jpg') center calc(50% - 300px) / cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .fullPhoto {
+    position: static;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: 300px;
+    background-position: center center;
+  }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .content {
+    padding: 80px 40px 60px;
+  }
+
+  .chapter {
+    grid-template-columns: 160px 1fr;
+    gap: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 480px;
+  }
+
+  .content {
+    padding: 60px 24px 48px;
+    gap: 56px;
+  }
+
+  .chapter {
+    grid-template-columns: 1fr;
+    gap: 12px 0;
+  }
+
+  .chapterLabel {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .photos {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    margin-top: 48px;
+  }
+
+  .photoCard,
+  .photo {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 48px 16px 40px;
+  }
+
+  .photoCard {
+    padding: 28px 24px;
+  }
+}

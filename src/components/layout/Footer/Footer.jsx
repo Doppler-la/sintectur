@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
+import { useModal } from '../../../context/ModalContext'
 
-const EMPRESA = ['Productos', 'Nuestro Trabajo', 'Inspírate', 'Contacto', 'Carrera']
+const EMPRESA = ['Servicios', 'Nuestro Trabajo', 'Inspírate', 'Contacto', 'Carrera']
+const ROUTES = { 'Nuestro Trabajo': '/portfolio' }
 const PRODUCTOS = ['Corporate Travel', 'Events & Incentives Travel', 'Specials Groups', 'Accompanied Trips', 'Argentina Group Experiences']
 
 const SOCIALS = [
@@ -63,7 +66,11 @@ const PARTNERS = [
   { src: '/dataweb.jpg', alt: 'Data Fiscal' },
 ]
 
+const MODAL_TRIGGERS = { Contacto: 'contacto', Carrera: 'carrera' }
+
 export default function Footer() {
+  const { openModal } = useModal()
+
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
@@ -74,9 +81,15 @@ export default function Footer() {
         <div className={styles.navCols}>
           <div className={styles.col}>
             <h5>EMPRESA</h5>
-            {EMPRESA.map((item) => (
-              <a key={item} href="#">{item}</a>
-            ))}
+            {EMPRESA.map((item) =>
+              MODAL_TRIGGERS[item] ? (
+                <button key={item} onClick={() => openModal(MODAL_TRIGGERS[item])}>{item}</button>
+              ) : ROUTES[item] ? (
+                <Link key={item} to={ROUTES[item]}>{item}</Link>
+              ) : (
+                <a key={item} href="#">{item}</a>
+              )
+            )}
           </div>
 
           <div className={styles.col}>
