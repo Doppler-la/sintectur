@@ -18,7 +18,7 @@ const ITEMS = [
     tagline: 'Hitos corporativos con identidad, sin sorpresas.',
     description:
       'La creatividad y la eficiencia presupuestaria pueden ir de la mano. Conocé nuestros productos',
-    links: [{ label: 'Meetings and Events', href: '/meetings-events', internal: true }, { label: 'Incentives Travel', href: '#' }],
+    links: [{ label: 'Meetings and Events', href: '/meetings-events', internal: true }, { label: 'Incentives Travel', href: '/incentives-travel', internal: true }],
   },
   {
     number: '03',

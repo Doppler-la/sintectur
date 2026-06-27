@@ -4,7 +4,14 @@ import { useModal } from '../../../context/ModalContext'
 
 const EMPRESA = ['Servicios', 'Nuestro Trabajo', 'Inspírate', 'Contacto', 'Carrera']
 const ROUTES = { 'Nuestro Trabajo': '/portfolio' }
-const PRODUCTOS = ['Corporate Travel', 'Events & Incentives Travel', 'Specials Groups', 'Accompanied Trips', 'Argentina Group Experiences']
+const PRODUCTOS = [
+  { label: 'Corporate Travel', href: '#' },
+  { label: 'Meetings & Events', href: '/meetings-events', internal: true },
+  { label: 'Incentives Travel', href: '/incentives-travel', internal: true },
+  { label: 'Specials Groups', href: '#' },
+  { label: 'Accompanied Trips', href: '#' },
+  { label: 'Argentina Group Experiences', href: '#' },
+]
 
 const SOCIALS = [
   {
@@ -94,9 +101,13 @@ export default function Footer() {
 
           <div className={styles.col}>
             <h5>PRODUCTOS</h5>
-            {PRODUCTOS.map((item) => (
-              <a key={item} href="#">{item}</a>
-            ))}
+            {PRODUCTOS.map((item) =>
+              item.internal ? (
+                <Link key={item.label} to={item.href}>{item.label}</Link>
+              ) : (
+                <a key={item.label} href={item.href}>{item.label}</a>
+              )
+            )}
           </div>
         </div>
 
