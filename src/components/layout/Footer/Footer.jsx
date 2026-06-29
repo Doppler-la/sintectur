@@ -10,7 +10,7 @@ const PRODUCTOS = [
   { label: 'Incentives Travel', href: '/incentives-travel', internal: true },
   { label: 'Specials Groups', href: '#' },
   { label: 'Accompanied Trips', href: '#' },
-  { label: 'Argentina Group Experiences', href: '#' },
+  { label: 'Argentina Group Experiences', href: '/argentina-experience', internal: true },
 ]
 
 const SOCIALS = [

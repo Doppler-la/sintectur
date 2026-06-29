@@ -34,7 +34,7 @@ const ITEMS = [
     tagline: 'Viajá como turista, viví como local.',
     description:
       'Por tierra, por avión o por crucero, descubrí Argentina. Un itinerario que conecta con lo que sos. Explorá nuestros productos.',
-    links: [{ label: 'Experience Argentina', href: '#' }, { label: 'Ships & Cruises', href: '#' }],
+    links: [{ label: 'Experience Argentina', href: '/argentina-experience', internal: true }, { label: 'Ships & Cruises', href: '#' }],
   },
   {
     number: '05',

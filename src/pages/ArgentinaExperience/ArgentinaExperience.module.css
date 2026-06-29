@@ -1,0 +1,111 @@
+.page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.navSpacer {
+  height: 90px;
+  background: #000;
+}
+
+/* Photo row */
+.photoRow {
+  display: flex;
+  gap: 18px;
+  padding: 0 18px;
+  height: 500px;
+}
+
+.photo {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .photoRow {
+    flex-direction: column;
+    height: auto;
+    padding: 0 16px;
+  }
+
+  .photo {
+    height: 280px;
+  }
+}
+
+/* Bottom CTA */
+.cta {
+  background: #000;
+  padding: 16px;
+}
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  min-height: 480px;
+}
+
+.ctaPanel {
+  padding: 48px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctaBlue {
+  background: var(--sky);
+  color: #fff;
+}
+
+.ctaWhite {
+  background: #fff;
+  color: #000;
+}
+
+.ctaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 480px;
+}
+
+.ctaLabel {
+  font-size: clamp(24px, 2.8vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ctaBtn {
+  font-size: clamp(22px, 2.2vw, 40px);
+  font-weight: 700;
+  font-family: 'Codec Pro', -apple-system, sans-serif;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: opacity 0.2s;
+}
+
+.ctaBtn:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .ctaGrid {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .ctaPanel {
+    padding: 40px 24px;
+    min-height: 280px;
+  }
+}

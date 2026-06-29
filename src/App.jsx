@@ -9,6 +9,7 @@ import Acceder from './pages/Acceder/Acceder'
 import AboutUs from './pages/AboutUs/AboutUs'
 import MeetingsEvents from './pages/MeetingsEvents/MeetingsEvents'
 import IncentivesTravel from './pages/IncentivesTravel/IncentivesTravel'
+import ArgentinaExperience from './pages/ArgentinaExperience/ArgentinaExperience'
 
 function RootLayout() {
   return (
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       { path: '/acceder',           element: <Acceder /> },
       { path: '/nosotros',          element: <AboutUs /> },
       { path: '/meetings-events',   element: <MeetingsEvents /> },
-      { path: '/incentives-travel', element: <IncentivesTravel /> },
+      { path: '/incentives-travel',    element: <IncentivesTravel /> },
+      { path: '/argentina-experience', element: <ArgentinaExperience /> },
     ],
   },
 ])
