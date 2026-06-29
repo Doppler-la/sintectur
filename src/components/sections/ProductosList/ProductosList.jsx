@@ -42,7 +42,7 @@ const ITEMS = [
     tagline: 'Sí, hay formas estándar de viajar. Pero también está la tuya.',
     description:
       'Investigamos opciones por vos, lo traducimos en un itinerario premium, y te asistimos durante el viaje 24/7. Y porque no hay edad para recorrer el mundo, diseñamos, junto a Becciu, viajes acompañados para adultos con paquetes exclusivos, seguridad y atención personalizada. Elegí el producto para vos.',
-    links: [{ label: 'Travel Experience', href: '#' }, { label: 'Viajes acompañados by Becciu', href: '#' }],
+    links: [{ label: 'Travel Experience', href: '/travel-experience', internal: true }, { label: 'Viajes acompañados by Becciu', href: '/viajes-becciu', internal: true }],
   },
 ]
 
