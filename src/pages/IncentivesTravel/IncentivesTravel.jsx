@@ -3,7 +3,6 @@ import Footer from '../../components/layout/Footer/Footer'
 import ProductHero from '../../components/sections/ProductHero/ProductHero'
 import ProductContent from '../../components/sections/ProductContent/ProductContent'
 import ProductCTA from '../../components/sections/ProductCTA/ProductCTA'
-import ProductVideo from '../../components/sections/ProductVideo/ProductVideo'
 import styles from './IncentivesTravel.module.css'
 
 const CHAPTERS = [
@@ -59,7 +58,7 @@ export default function IncentivesTravel() {
 
       <ProductContent chapters={CHAPTERS} />
 
-      <ProductVideo photo="/incentives3.png" />
+      {/* <ProductVideo photo="/incentives3.png" /> */}
 
       <ProductCTA
         leftColor="var(--gold)"
