@@ -1,0 +1,116 @@
+.page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.navSpacer {
+  height: 90px;
+  background: #000;
+}
+
+.main {
+  padding: 60px 60px 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 56px;
+}
+
+/* 6-col grid: each card spans 2 cols → all equal width.
+   Last 2 cards placed at cols 2–4 and 4–6 to center them. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.card {
+  grid-column: span 2;
+}
+
+.card:nth-child(4) { grid-column: 2 / 4; }
+.card:nth-child(5) { grid-column: 4 / 6; }
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.card:hover .play {
+  background: rgba(0, 0, 0, 0.6);
+  transform: scale(1.08);
+}
+
+.cardTitle {
+  font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cardSub {
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    padding: 48px 40px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 40px 24px 64px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card:nth-child(4),
+  .card:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 32px 16px 48px;
+  }
+}
