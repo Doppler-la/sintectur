@@ -6,8 +6,6 @@ import WhoWeAre from '../components/sections/WhoWeAre/WhoWeAre'
 import ProductosBanner from '../components/sections/ProductosBanner/ProductosBanner'
 import ProductosList from '../components/sections/ProductosList/ProductosList'
 import CTADual from '../components/sections/CTADual/CTADual'
-import Services from '../components/sections/Services/Services'
-import Contact from '../components/sections/Contact/Contact'
 
 export default function Home() {
   return (

@@ -5,17 +5,17 @@ export default function WhoWeAre() {
     <section className={styles.section}>
       <div className={styles.body}>
         <p className={styles.p}>
-          Sintectur no empezó ayer. Empezó hace más de 65 años a trabajar con empresas,
-          instituciones, grupos y viajeros sabiendo que cada caso necesitaba una estrategia distinta.
+          Sintectur es una plataforma que integra servicios
+          especializados y profesionales capaces de diseñar y ejecutar proyectos de viaje.
         </p>
         <p className={`${styles.p} ${styles.pGray}`}>
-          No somos una simple emisora de tickets. Somos una plataforma 360° de viajes y
-          experiencias. Un ecosistema de productos especializados diseñados a medida.
+          Ser especialistas nos permite guiarte con procesos claros y ordenados, que evitan la
+          improvisación, eliminan la fricción y te brindan previsibilidad. Por eso, antes de
+          actuar, escuchamos, analizamos el contexto, definimos una estrategia y
+          planificamos cada etapa.
         </p>
         <p className={styles.p}>
-          Traducimos desafíos en soluciones concretas a través de procesos claros, planificación
-          integral y una mirada creativa. Todo a tu disposición para acompañarte en cada etapa del
-          proceso y aterrizar tus objetivos en su mejor expresión.
+          Más de 65 años de experiencia respaldan esta forma de trabajar.
         </p>
       </div>
     </section>
