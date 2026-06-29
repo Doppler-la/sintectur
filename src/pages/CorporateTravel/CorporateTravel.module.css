@@ -1,0 +1,10 @@
+.page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.navSpacer {
+  height: 90px;
+  background: #000;
+}

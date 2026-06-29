@@ -10,7 +10,7 @@ const ITEMS = [
     tagline: 'Los viajes de tu empresa, solucionados.',
     description:
       'Necesitás trazabilidad, control administrativo y reportes en tiempo real. Este es tu producto.',
-    links: [{ label: 'Corporate Travel', href: '#' }],
+    links: [{ label: 'Corporate Travel', href: '/corporate-travel', internal: true }],
   },
   {
     number: '02',

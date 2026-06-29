@@ -6,7 +6,7 @@ const EMPRESA = ['Servicios', 'Nuestro Trabajo', 'Inspírate', 'Contacto', 'Carr
 const ROUTES = { 'Nuestro Trabajo': '/portfolio', 'Inspírate': '/inspirate' }
 const HASH_LINKS = { 'Servicios': '/#servicios' }
 const PRODUCTOS = [
-  { label: 'Corporate Travel', href: '#' },
+  { label: 'Corporate Travel', href: '/corporate-travel', internal: true },
   { label: 'Meetings & Events', href: '/meetings-events', internal: true },
   { label: 'Incentives Travel', href: '/incentives-travel', internal: true },
   { label: 'Specials Groups', href: '#' },
