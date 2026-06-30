@@ -66,6 +66,8 @@
   align-items: center;
   justify-content: center;
   transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  padding: 0;
 }
 
 .card:hover .play {
@@ -113,4 +115,45 @@
   .main {
     padding: 32px 16px 48px;
   }
+}
+
+/* Video modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+  width: 90vw;
+  max-width: 960px;
+}
+
+.video {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.closeBtn:hover {
+  opacity: 1;
 }
