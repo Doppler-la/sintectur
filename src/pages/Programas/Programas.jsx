@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Nav from '../../components/layout/Nav/Nav'
 import Footer from '../../components/layout/Footer/Footer'
 import LazyBg from '../../components/ui/LazyImg/LazyBg'
+import VideoModal from '../../components/ui/VideoModal/VideoModal'
 import styles from './Programas.module.css'
 
 const mediaUrl  = import.meta.env.VITE_MEDIA_URL + '/Images/'
@@ -26,30 +27,6 @@ function PlayIcon({ onClick }) {
   )
 }
 
-function VideoModal({ src, onClose }) {
-  useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') onClose() }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [onClose])
-
-  return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeBtn} onClick={onClose} aria-label="Cerrar">✕</button>
-        <video
-          className={styles.video}
-          src={src}
-          controls
-          controlsList="nodownload"
-          autoPlay
-          playsInline
-          preload="none"
-        />
-      </div>
-    </div>
-  )
-}
 
 function ProgramCard({ title, img, pdf, onPlay }) {
   return (
