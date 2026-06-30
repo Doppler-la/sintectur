@@ -2,13 +2,15 @@ import Nav from '../../components/layout/Nav/Nav'
 import Footer from '../../components/layout/Footer/Footer'
 import styles from './Portfolio.module.css'
 
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
+
 const CASOS = [
-  { id: 1, label: 'Caso 1', src: '/1.jpg' },
-  { id: 2, label: 'Caso 2', src: '/2.jpg' },
-  { id: 3, label: 'Caso 3', src: '/3.png' },
-  { id: 4, label: 'Caso 4', src: '/4.jpg' },
-  { id: 5, label: 'Caso 5', src: '/5.jpg' },
-  { id: 6, label: 'Caso 6', src: '/6.jpg' },
+  { id: 1, label: 'Caso 1', src: `${mediaUrl}1.jpg` },
+  { id: 2, label: 'Caso 2', src: `${mediaUrl}2.jpg` },
+  { id: 3, label: 'Caso 3', src: `${mediaUrl}3.png` },
+  { id: 4, label: 'Caso 4', src: `${mediaUrl}4.jpg` },
+  { id: 5, label: 'Caso 5', src: `${mediaUrl}5.jpg` },
+  { id: 6, label: 'Caso 6', src: `${mediaUrl}6.jpg` },
 ]
 
 function PlayIcon() {

@@ -66,7 +66,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brand}>
-          <img src={`${mediaUrl}logov1.png`} alt="Sintectur" className={styles.logo} />
+          <img src="/logov1.png" alt="Sintectur" className={styles.logo} />
         </div>
 
         <div className={styles.navCols}>

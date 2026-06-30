@@ -1,4 +1,6 @@
 import Nav from '../../components/layout/Nav/Nav'
+
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
 import ProductContent from '../../components/sections/ProductContent/ProductContent'
 import styles from './AboutUs.module.css'
@@ -53,7 +55,7 @@ export default function AboutUs() {
 
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className={styles.hero}>
-        <div className={styles.heroImg} />
+        <div className={styles.heroImg} style={{ background: `url(${mediaUrl}fondo-about-us.jpg) center calc(50% + 260px) / 100% auto no-repeat` }} />
         <h1 className={styles.heroTitle}>Quiénes Somos</h1>
       </section>
 
@@ -65,7 +67,7 @@ export default function AboutUs() {
         <div className={styles.photoCard}>
           <span className={styles.photoCardText}>Se auténtico.</span>
         </div>
-        <div className={styles.photo} />
+        <div className={styles.photo} style={{ background: `url(${mediaUrl}about-us-pic1.png) center/cover no-repeat` }} />
       </section>
 
       {/* Capítulo 3 */}
@@ -73,7 +75,7 @@ export default function AboutUs() {
 
       {/* Foto full width entre cap 3 y 4 */}
       <div className={styles.fullPhotoWrap}>
-        <div className={styles.fullPhoto} />
+        <div className={styles.fullPhoto} style={{ background: `url(${mediaUrl}about-us-pic2.jpg) center calc(50% - 300px) / cover no-repeat` }} />
       </div>
 
       {/* Capítulo 4 */}

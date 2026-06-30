@@ -1,4 +1,6 @@
 import Nav from '../../components/layout/Nav/Nav'
+
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
 import ProductHero from '../../components/sections/ProductHero/ProductHero'
 import ProductContent from '../../components/sections/ProductContent/ProductContent'
@@ -54,7 +56,7 @@ export default function OrchestraTravel() {
         leftColor="var(--gold)"
         title={<>Viajes para<br />orquestas</>}
         tagline="Experiencias premium para músicos de elite."
-        photo="/incentives2.jpg"
+        photo={`${mediaUrl}incentives2.jpg`}
       />
 
       <ProductContent chapters={CHAPTERS} />
@@ -63,7 +65,7 @@ export default function OrchestraTravel() {
         leftColor="var(--gold)"
         text="Damos en la tecla de lo que precisás. Escribinos."
         ctaLabel="Escribinos"
-        photo="/incentives1.png"
+        photo={`${mediaUrl}incentives1.png`}
       />
 
       <Footer />

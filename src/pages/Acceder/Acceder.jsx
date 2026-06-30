@@ -11,7 +11,6 @@ export default function Acceder() {
 
         {/* ── Hero ───────────────────────────────────────────────── */}
         <section className={styles.hero}>
-          {/* <img src="/foto-acceder.jpg" alt="Bienvenidos" className={styles.heroImg} /> */}
           <h1 className={styles.heroTitle}>Bienvenidos</h1>
         </section>
 

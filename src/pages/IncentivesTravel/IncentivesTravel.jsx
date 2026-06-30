@@ -1,4 +1,6 @@
 import Nav from '../../components/layout/Nav/Nav'
+
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
 import ProductHero from '../../components/sections/ProductHero/ProductHero'
 import ProductContent from '../../components/sections/ProductContent/ProductContent'
@@ -53,18 +55,16 @@ export default function IncentivesTravel() {
         leftColor="var(--watermelon)"
         title={<>Viajes de<br />incentivo<br />para empresas.</>}
         tagline="El mensaje correcto en el destino correcto."
-        photo="/incentives2.jpg"
+        photo={`${mediaUrl}incentives2.jpg`}
       />
 
       <ProductContent chapters={CHAPTERS} />
-
-      {/* <ProductVideo photo="/incentives3.png" /> */}
 
       <ProductCTA
         leftColor="var(--gold)"
         text="Un viaje de incentivo está obligado a generar impacto en tus invitados."
         ctaLabel="Escribinos"
-        photo="/incentives1.png"
+        photo={`${mediaUrl}incentives1.png`}
       />
 
       <Footer />

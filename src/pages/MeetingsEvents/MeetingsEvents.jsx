@@ -1,4 +1,6 @@
 import Nav from '../../components/layout/Nav/Nav'
+
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
 import ProductHero from '../../components/sections/ProductHero/ProductHero'
 import ProductContent from '../../components/sections/ProductContent/ProductContent'
@@ -54,7 +56,7 @@ export default function MeetingsEvents() {
         leftColor="var(--gold)"
         title={<>Reuniones<br />y eventos<br />corporativos.</>}
         tagline="Experiencias alineadas con tu marca y mensaje."
-        photo="/meeting1.jpg"
+        photo={`${mediaUrl}meeting1.jpg`}
       />
 
       <ProductContent chapters={CHAPTERS} />
@@ -63,7 +65,7 @@ export default function MeetingsEvents() {
         leftColor="var(--watermelon)"
         text="No renuncies a tener creatividad y eficiencia del presupuesto."
         ctaLabel="Escribinos"
-        photo="/meeting2.png"
+        photo={`${mediaUrl}meeting2.png`}
       />
 
       <Footer />

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import styles from './Loader.module.css'
 
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
+
 export default function Loader({ visible }) {
   const [mounted, setMounted] = useState(true)
 
@@ -15,7 +17,7 @@ export default function Loader({ visible }) {
 
   return (
     <div className={`${styles.loader} ${!visible ? styles.hidden : ''}`}>
-      <img src="/loader.gif" alt="Cargando" className={styles.gif} />
+      <img src={`${mediaUrl}loader.gif`} alt="Cargando" className={styles.gif} />
     </div>
   )
 }

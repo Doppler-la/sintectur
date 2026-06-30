@@ -23,7 +23,6 @@
 .heroImg {
   position: absolute;
   inset: 0;
-  background: url('/fondo-about-us.jpg') center calc(50% + 260px) / 100% auto no-repeat;
 }
 
 .heroImg::after {
@@ -74,7 +73,6 @@
 
 .photo {
   height: 480px;
-  background: url('/about-us-pic1.png') center/cover no-repeat;
 }
 
 /* ── Foto full width ─────────────────────────────────────────── */
@@ -88,7 +86,6 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 520px;
-  background: url('/about-us-pic2.jpg') center calc(50% - 300px) / cover no-repeat;
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */

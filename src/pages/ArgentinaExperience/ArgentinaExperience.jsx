@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import Nav from '../../components/layout/Nav/Nav'
+
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
 import ProductHero from '../../components/sections/ProductHero/ProductHero'
 import ProductContent from '../../components/sections/ProductContent/ProductContent'
@@ -83,14 +85,14 @@ export default function ArgentinaExperience() {
         leftColor="var(--sky)"
         title={<>La verdadera<br />experiencia<br />argentina</>}
         tagline="Un viaje hacia las costumbres argentinas."
-        photo="/argentina-experience1.png"
+        photo={`${mediaUrl}argentina-experience1.png`}
       />
 
       <ProductContent chapters={CHAPTERS_1} />
 
       <div className={styles.photoRow}>
-        <div className={styles.photo} style={{ backgroundImage: 'url(/argentina-experience2.jpg)' }} />
-        <div className={styles.photo} style={{ backgroundImage: 'url(/argentina-experience3.jpg)' }} />
+        <div className={styles.photo} style={{ backgroundImage: `url(${mediaUrl}argentina-experience2.jpg)` }} />
+        <div className={styles.photo} style={{ backgroundImage: `url(${mediaUrl}argentina-experience3.jpg)` }} />
       </div>
 
       <ProductContent chapters={CHAPTERS_2} />

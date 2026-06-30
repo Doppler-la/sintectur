@@ -2,12 +2,14 @@ import Nav from '../../components/layout/Nav/Nav'
 import Footer from '../../components/layout/Footer/Footer'
 import styles from './Programas.module.css'
 
+const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
+
 const PROGRAMS = [
-  { id: 1, title: 'Conoce Buenos Aires',                        img: '/programas-1.jpg' },
-  { id: 2, title: 'Iguazú: el dedo de dios',                   img: '/programas-2.jpg' },
-  { id: 3, title: 'Jujuy: no viste nunca tantos colores',       img: '/programas-3.jpg' },
-  { id: 4, title: 'Mendoza: convertite en un experto en vinos', img: '/programas-4.jpg' },
-  { id: 5, title: 'Salta: un salto en el tiempo y el espacio',  img: '/programas-5.jpg' },
+  { id: 1, title: 'Conoce Buenos Aires',                        img: `${mediaUrl}programas-1.jpg` },
+  { id: 2, title: 'Iguazú: el dedo de dios',                   img: `${mediaUrl}programas-2.jpg` },
+  { id: 3, title: 'Jujuy: no viste nunca tantos colores',       img: `${mediaUrl}programas-3.jpg` },
+  { id: 4, title: 'Mendoza: convertite en un experto en vinos', img: `${mediaUrl}programas-4.jpg` },
+  { id: 5, title: 'Salta: un salto en el tiempo y el espacio',  img: `${mediaUrl}programas-5.jpg` },
 ]
 
 function PlayIcon() {
