@@ -19,7 +19,7 @@ export default function ProductosBanner() {
           </div>
         </div>
         <div className={styles.imagePanel}>
-          <LazyImg src={`${mediaUrl}eyev1.png`} alt="" className={styles.image} />
+          <LazyImg src={`${mediaUrl}eyev1.png`} alt="" className={styles.image} wrapperClassName={styles.imageWrapper} />
         </div>
       </div>
     </section>
