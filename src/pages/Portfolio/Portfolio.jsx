@@ -1,5 +1,6 @@
 import Nav from '../../components/layout/Nav/Nav'
 import Footer from '../../components/layout/Footer/Footer'
+import LazyImg from '../../components/ui/LazyImg/LazyImg'
 import styles from './Portfolio.module.css'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
@@ -34,7 +35,7 @@ export default function Portfolio() {
           {CASOS.map((caso) => (
             <div key={caso.id} className={styles.card}>
               <div className={styles.thumbnail}>
-                {caso.src && <img src={caso.src} alt={caso.label} className={styles.img} />}
+                {caso.src && <LazyImg src={caso.src} alt={caso.label} className={styles.img} wrapperClassName={styles.imgWrapper} />}
                 <PlayIcon />
               </div>
               <span className={styles.label}>{caso.label}</span>

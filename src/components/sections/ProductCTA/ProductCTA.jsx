@@ -1,3 +1,4 @@
+import LazyBg from '../../ui/LazyImg/LazyBg'
 import styles from './ProductCTA.module.css'
 import { useModal } from '../../../context/ModalContext'
 
@@ -18,7 +19,7 @@ export default function ProductCTA({ leftColor = 'var(--watermelon)', text, ctaL
         <p className={styles.text}>{text}</p>
         <button className={styles.btn} onClick={() => openModal('contacto')}>{ctaLabel}</button>
       </div>
-      <div className={styles.right} style={{ backgroundImage: photo ? `url(${photo})` : 'none' }} />
+      <LazyBg src={photo} className={styles.right} />
     </section>
   )
 }

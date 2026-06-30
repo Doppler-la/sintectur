@@ -1,3 +1,4 @@
+import LazyBg from '../../ui/LazyImg/LazyBg'
 import styles from './ProductHero.module.css'
 
 /**
@@ -14,9 +15,9 @@ export default function ProductHero({ leftColor = 'var(--gold)', title, tagline,
       <div className={styles.left} style={{ background: leftColor }}>
         <h1 className={styles.title}>{title}</h1>
       </div>
-      <div className={styles.right} style={{ backgroundImage: photo ? `url(${photo})` : 'none' }}>
+      <LazyBg src={photo} className={styles.right}>
         {tagline && <p className={styles.tagline}>{tagline}</p>}
-      </div>
+      </LazyBg>
     </section>
   )
 }

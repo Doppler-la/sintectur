@@ -1,0 +1,48 @@
+/* ── <img> wrapper ─────────────────────────────────────────── */
+.wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── background-image div wrapper ─────────────────────────── */
+.bgWrapper {
+  position: relative;
+}
+
+/* ── shimmer overlay ───────────────────────────────────────── */
+.shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #08091a 0%,
+    #16213a 50%,
+    #08091a 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerPulse 1.6s ease-in-out infinite;
+  transition: opacity 0.45s ease;
+}
+
+.shimmerHidden {
+  opacity: 0;
+}
+
+@keyframes shimmerPulse {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── img inside LazyImg ────────────────────────────────────── */
+.img {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.imgLoaded {
+  opacity: 1;
+}

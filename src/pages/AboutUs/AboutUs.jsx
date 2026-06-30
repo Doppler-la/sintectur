@@ -1,4 +1,5 @@
 import Nav from '../../components/layout/Nav/Nav'
+import LazyBg from '../../components/ui/LazyImg/LazyBg'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
@@ -55,7 +56,7 @@ export default function AboutUs() {
 
       {/* ── Hero ───────────────────────────────────────────── */}
       <section className={styles.hero}>
-        <div className={styles.heroImg} style={{ background: `url(${mediaUrl}fondo-about-us.jpg) center calc(50% + 260px) / 100% auto no-repeat` }} />
+        <LazyBg src={`${mediaUrl}fondo-about-us.jpg`} className={styles.heroImg} />
         <h1 className={styles.heroTitle}>Quiénes Somos</h1>
       </section>
 
@@ -67,7 +68,7 @@ export default function AboutUs() {
         <div className={styles.photoCard}>
           <span className={styles.photoCardText}>Se auténtico.</span>
         </div>
-        <div className={styles.photo} style={{ background: `url(${mediaUrl}about-us-pic1.png) center/cover no-repeat` }} />
+        <LazyBg src={`${mediaUrl}about-us-pic1.png`} className={styles.photo} />
       </section>
 
       {/* Capítulo 3 */}
@@ -75,7 +76,7 @@ export default function AboutUs() {
 
       {/* Foto full width entre cap 3 y 4 */}
       <div className={styles.fullPhotoWrap}>
-        <div className={styles.fullPhoto} style={{ background: `url(${mediaUrl}about-us-pic2.jpg) center calc(50% - 300px) / cover no-repeat` }} />
+        <LazyBg src={`${mediaUrl}about-us-pic2.jpg`} className={styles.fullPhoto} />
       </div>
 
       {/* Capítulo 4 */}

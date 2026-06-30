@@ -23,6 +23,9 @@
 .heroImg {
   position: absolute;
   inset: 0;
+  background-position: center calc(50% + 260px);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 .heroImg::after {
@@ -73,6 +76,9 @@
 
 .photo {
   height: 480px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* ── Foto full width ─────────────────────────────────────────── */
@@ -86,6 +92,9 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 520px;
+  background-position: center calc(50% - 300px);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */

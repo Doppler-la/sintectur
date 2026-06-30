@@ -1,3 +1,4 @@
+import LazyImg from '../../ui/LazyImg/LazyImg'
 import styles from './ProductosBanner.module.css'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
@@ -18,7 +19,7 @@ export default function ProductosBanner() {
           </div>
         </div>
         <div className={styles.imagePanel}>
-          <img src={`${mediaUrl}eyev1.png`} alt="" className={styles.image} />
+          <LazyImg src={`${mediaUrl}eyev1.png`} alt="" className={styles.image} />
         </div>
       </div>
     </section>

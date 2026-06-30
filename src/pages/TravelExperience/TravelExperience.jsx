@@ -1,4 +1,5 @@
 import Nav from '../../components/layout/Nav/Nav'
+import LazyBg from '../../components/ui/LazyImg/LazyBg'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 import Footer from '../../components/layout/Footer/Footer'
@@ -85,8 +86,8 @@ export default function TravelExperience() {
       <ProductContent chapters={CHAPTERS_1} />
 
       <div className={styles.photoRow}>
-        <div className={styles.photo} style={{ backgroundImage: `url(${mediaUrl}argentina-experience2.jpg)` }} />
-        <div className={styles.photo} style={{ backgroundImage: `url(${mediaUrl}argentina-experience3.jpg)` }} />
+        <LazyBg src={`${mediaUrl}argentina-experience2.jpg`} className={styles.photo} />
+        <LazyBg src={`${mediaUrl}argentina-experience3.jpg`} className={styles.photo} />
       </div>
 
       <ProductContent chapters={CHAPTERS_2} />

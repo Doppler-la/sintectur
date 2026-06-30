@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import { useModal } from '../../../context/ModalContext'
+import LazyImg from '../../ui/LazyImg/LazyImg'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 
@@ -110,7 +111,7 @@ export default function Footer() {
         <span className={styles.copyright}>© 1961 Sintectur® | Todos los Derechos Reservados</span>
         <div className={styles.partners}>
           {PARTNERS.map((p) => (
-            <img
+            <LazyImg
               key={p.alt}
               src={`${mediaUrl}${p.file}`}
               alt={p.alt}

@@ -1,5 +1,6 @@
 import Nav from '../../components/layout/Nav/Nav'
 import Footer from '../../components/layout/Footer/Footer'
+import LazyBg from '../../components/ui/LazyImg/LazyBg'
 import styles from './Programas.module.css'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
@@ -25,9 +26,9 @@ function PlayIcon() {
 function ProgramCard({ title, img }) {
   return (
     <div className={styles.card}>
-      <div className={styles.thumb} style={{ backgroundImage: `url(${img})` }}>
+      <LazyBg src={img} className={styles.thumb}>
         <PlayIcon />
-      </div>
+      </LazyBg>
       <h3 className={styles.cardTitle}>{title}</h3>
       <p className={styles.cardSub}>Clic para descargar el programa completo</p>
     </div>
