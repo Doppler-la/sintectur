@@ -111,7 +111,7 @@
 }
 
 .partnerLogo {
-  height: 72px;
+  height: 62px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -119,7 +119,7 @@
 }
 
 .partnerLogoColor {
-  height: 72px;
+  height: 62px;
   width: auto;
   object-fit: contain;
 }
