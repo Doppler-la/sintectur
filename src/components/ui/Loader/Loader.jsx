@@ -15,10 +15,7 @@ export default function Loader({ visible }) {
 
   return (
     <div className={`${styles.loader} ${!visible ? styles.hidden : ''}`}>
-      <div className={styles.center}>
-        <img src="/Loader_GIf.gif" alt="Turbina" className={styles.turbine} />
-        <img src="/Logo_sintectur_color.png" alt="Sintectur" className={styles.logo} />
-      </div>
+      <img src="/loader.gif" alt="Cargando" className={styles.gif} />
     </div>
   )
 }
