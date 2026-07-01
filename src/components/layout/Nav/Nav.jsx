@@ -41,10 +41,10 @@ export default function Nav() {
 
         {/* derecha: Acceder + Idioma */}
         <div className={`${styles.navRight} ${menuOpen ? styles.navRightHidden : ''}`}>
-          <a href="https://sintectcustreporting.azurewebsites.net/Login" target="_blank" rel="noopener noreferrer" className={styles.navAction}>
+          {/* <a href="https://sintectcustreporting.azurewebsites.net/Login" target="_blank" rel="noopener noreferrer" className={styles.navAction}>
             <CircleUser size={18} strokeWidth={1.8} />
             Acceso clientes
-          </a>
+          </a> */}
           <button className={styles.navAction}>
             <Globe size={18} strokeWidth={1.8} />
             Idioma
@@ -65,9 +65,9 @@ export default function Nav() {
             <Link className={styles.menuItem} to="/portfolio" onClick={closeMenu}>Nuestro trabajo</Link>
           </li>
 
-          <li className={styles.mainItem} style={{ '--i': 2 }}>
+          {/* <li className={styles.mainItem} style={{ '--i': 2 }}>
             <Link className={styles.menuItem} to="/inspirate" onClick={closeMenu}>Inspírate</Link>
-          </li>
+          </li> */}
 
           <li className={styles.mainItem} style={{ '--i': 3 }}>
             <button className={styles.menuItem} onClick={() => handleModal('contacto')}>Contacto</button>
@@ -80,10 +80,10 @@ export default function Nav() {
         </ul>
 
         <div className={styles.overlayActions}>
-          <a href="https://sintectcustreporting.azurewebsites.net/Login" target="_blank" rel="noopener noreferrer" className={styles.overlayAction}>
+          {/* <a href="https://sintectcustreporting.azurewebsites.net/Login" target="_blank" rel="noopener noreferrer" className={styles.overlayAction}>
             <CircleUser size={18} strokeWidth={1.8} />
             Acceso clientes
-          </a>
+          </a> */}
           <button className={styles.overlayAction}>
             <Globe size={18} strokeWidth={1.8} />
             Idioma

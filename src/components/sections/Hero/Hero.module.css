@@ -38,8 +38,8 @@ display: flex;
 }
 
 .title {
-  font-size: clamp(44px, 7vw, 88px);
-  font-weight: 800;
+  font-size: clamp(44px, 7vw, 62px);
+  font-weight: 700;
   letter-spacing: -2px;
   line-height: 1.0;
   color: #fff;
@@ -65,12 +65,11 @@ display: flex;
 
 .bottomLogo {
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   width: 100%;
   display: block;
   z-index: 2;
-  opacity: 0.9;
 }
 
 @media (max-width: 768px) {

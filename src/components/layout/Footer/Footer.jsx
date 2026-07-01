@@ -5,8 +5,8 @@ import LazyImg from '../../ui/LazyImg/LazyImg'
 
 const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 
-const EMPRESA = ['Servicios', 'Nuestro Trabajo', 'Inspírate', 'Contacto', 'Carrera']
-const ROUTES = { 'Nuestro Trabajo': '/portfolio', 'Inspírate': '/inspirate' }
+const EMPRESA = ['Servicios', 'Nuestro Trabajo', 'Contacto', 'Carrera']
+const ROUTES = { 'Nuestro Trabajo': '/portfolio'}
 const HASH_LINKS = { 'Servicios': '/#servicios' }
 const PRODUCTOS = [
   { label: 'Corporate Travel', href: '/corporate-travel', internal: true },
