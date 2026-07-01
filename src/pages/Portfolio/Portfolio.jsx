@@ -9,12 +9,12 @@ const mediaUrl = import.meta.env.VITE_MEDIA_URL + '/Images/'
 const videoUrl = import.meta.env.VITE_MEDIA_URL + '/Videos/'
 
 const CASOS = [
-  { id: 1, label: 'Sony Kando', src: `${mediaUrl}1.jpg`, video: 'SONY-KANDO-SINTECTUR.mp4' },
-  { id: 2, label: 'Volvo Edición Especial', src: `${mediaUrl}2.jpg`, video: 'BTV-FH30-LOCACION.mp4' },
-  { id: 3, label: 'Mondelez CNV', src: `${mediaUrl}3.png`, video: 'CNV-MONDELEZ-2025-SINTECTUR-LOGO.mp4' },
+  { id: 1, label: 'Sony Kando', src: `${mediaUrl}1.png`, video: 'SONY-KANDO-SINTECTUR.mp4' },
+  { id: 2, label: 'Volvo Edición Especial', src: `${mediaUrl}2.png`, video: 'BTV-FH30-LOCACION.mp4' },
+  { id: 3, label: 'Mondelez CNV', src: `${mediaUrl}3.jpg`, video: 'CNV-MONDELEZ-2025-SINTECTUR-LOGO.mp4' },
   { id: 4, label: 'Novartis Lanzamiento Kisqali', src: `${mediaUrl}4.jpg`, video: 'RECAP-KISCALI-Version-Sintectur.mp4' },
   { id: 5, label: 'Nissan Iguazú', src: `${mediaUrl}5.jpg`, video: 'NISSAN-MENDOZA-2023.mp4' },
-  { id: 6, label: 'Generación M 2025', src: `${mediaUrl}6.jpg`, video: 'GM-2024.mp4' },
+  { id: 6, label: 'Generación M 2025', src: `${mediaUrl}6.png`, video: 'GM-2024.mp4' },
 ]
 
 function PlayIcon() {
