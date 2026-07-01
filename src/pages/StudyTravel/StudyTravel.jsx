@@ -61,7 +61,7 @@ export default function StudyTravel() {
 
       <ProductCTA
         leftColor="var(--gold)"
-        text="Nos encargamos de que todo salga tal como necesitás.. Escribinos."
+        text="Nos encargamos de que todo salga tal como necesitás."
         ctaLabel="Escribinos"
         photo={`${mediaUrl}incentives1.png`}
       />
