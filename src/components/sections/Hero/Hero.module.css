@@ -1,5 +1,7 @@
 .hero {
-  height: 100vh;
+  /* 100vh + la mitad del alto del logo (2240x410 => ~18.3vw de alto a full width),
+     asi al cargar se ve ~50% del logo y el resto se revela al scrollear */
+  height: calc(100vh + 5vw);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
