@@ -57,18 +57,22 @@ function BottomCTA() {
   return (
     <section className={styles.cta}>
       <div className={styles.ctaGrid}>
-        <div className={`${styles.ctaPanel} ${styles.ctaBlue}`}>
+        <button
+          type="button"
+          className={`${styles.ctaPanel} ${styles.ctaBlue}`}
+          onClick={() => openModal('contacto')}
+        >
           <div className={styles.ctaGroup}>
             <p className={styles.ctaLabel}>Viajá acompañado a donde querés ir. Escribinos.</p>
-            <button className={styles.ctaBtn} onClick={() => openModal('contacto')}>Escribinos</button>
+            <span className={styles.ctaBtn}>Escribinos</span>
           </div>
-        </div>
-        <div className={`${styles.ctaPanel} ${styles.ctaWhite}`}>
+        </button>
+        <Link to="/programas" className={`${styles.ctaPanel} ${styles.ctaWhite}`}>
           <div className={styles.ctaGroup}>
             <p className={styles.ctaLabel}>Conocé más de nuestro servicio.</p>
-            <Link to="/programas" className={styles.ctaBtn}>Programas</Link>
+            <span className={styles.ctaBtn}>Programas</span>
           </div>
-        </div>
+        </Link>
       </div>
     </section>
   )

@@ -60,12 +60,16 @@ function BottomCTA() {
 
   return (
     <section className={styles.cta}>
-      <div className={styles.ctaSingle}>
+      <button
+        type="button"
+        className={styles.ctaSingle}
+        onClick={() => openModal('contacto')}
+      >
         <div className={styles.ctaGroup}>
           <p className={styles.ctaLabel}>Desconectar para disfrutar mientras otro se ocupa de la organización es posible. Escribinos.</p>
-          <button className={styles.ctaBtn} onClick={() => openModal('contacto')}>Escribinos</button>
+          <span className={styles.ctaBtn}>Escribinos</span>
         </div>
-      </div>
+      </button>
     </section>
   )
 }
