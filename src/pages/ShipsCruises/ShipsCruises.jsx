@@ -70,7 +70,7 @@ function BottomCTA() {
         </button>
         <Link to="/programas" className={`${styles.ctaPanel} ${styles.ctaWhite}`}>
           <div className={styles.ctaGroup}>
-            <p className={styles.ctaLabel}>Mirá todos los programas<br />que tenemos para vos.</p>
+            <p className={styles.ctaLabel}>Mirá todos los programas<br />que tenemos <br/>para vos.</p>
             <span className={styles.ctaBtn}>Programas</span>
           </div>
         </Link>
