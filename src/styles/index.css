@@ -177,4 +177,12 @@ body {
   color: var(--navy);
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.8s ease;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+/* los form controls no heredan font-family del body por defecto en los navegadores */
+button, input, select, textarea, option {
+  font-family: inherit;
+  letter-spacing: inherit;
 }
