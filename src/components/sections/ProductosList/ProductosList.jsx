@@ -22,7 +22,7 @@ const ITEMS = [
   },
   {
     number: '03',
-    title: 'Grupos premium / Specialized Groups',
+    title: 'Grupos especializados',
     tagline: 'Viajes para estudiantes, deportistas, orquestas, coros y ballets.',
     description:
       'Los viajes con exigencias propias necesitan estructura, coordinación, seguridad y certezas. Para lo complejo y lo específico, una planificación a la altura. Resolvelo todo con nosotros.',
@@ -30,7 +30,7 @@ const ITEMS = [
   },
   {
     number: '04',
-    title: 'Experiencias Argentinas',
+    title: 'Experiencias argentinas',
     tagline: 'Viajá como turista, viví como local.',
     description:
       'Por tierra, por avión o por crucero, descubrí Argentina. Un itinerario que conecta con lo que sos. Explorá nuestros productos.',

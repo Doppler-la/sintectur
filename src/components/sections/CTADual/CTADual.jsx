@@ -9,21 +9,25 @@ export default function CTADual() {
     <section className={styles.section}>
       <div className={styles.grid}>
 
-        <div className={`${styles.panel} ${styles.light}`}>
+        <button
+          type="button"
+          className={`${styles.panel} ${styles.light}`}
+          onClick={() => openModal('contacto')}
+        >
           <div className={styles.textGroup}>
             <span className={styles.label}>Contacto</span>
             <h2 className={styles.title}>Un pequeño clic, un gran paso hacia tus objetivos.</h2>
-            <button className={styles.cta} onClick={() => openModal('contacto')}>Escribinos</button>
+            <span className={styles.cta}>Escribinos</span>
           </div>
-        </div>
+        </button>
 
-        <div className={`${styles.panel} ${styles.color}`}>
+        <Link to="/nosotros" className={`${styles.panel} ${styles.color}`}>
           <div className={styles.textGroup}>
             <span className={styles.label}>Sobre nosotros</span>
             <h2 className={styles.title}>No empezamos ayer. Sumergite en nuestra historia.</h2>
-            <Link to="/nosotros" className={styles.cta}>Conocenos</Link>
+            <span className={styles.cta}>Conocenos</span>
           </div>
-        </div>
+        </Link>
 
       </div>
     </section>

@@ -64,7 +64,7 @@ export default function CorporateTravel() {
 
       <ProductCTA
         leftColor="var(--navy)"
-        text="Nosotros resolvemos el viaje, vos despejá tu agenda. Escribinos."
+        text="Nosotros resolvemos el viaje, vos despejá tu agenda."
         ctaLabel="Escribinos"
         photo={`${mediaUrl}incentives1.png`}
       />

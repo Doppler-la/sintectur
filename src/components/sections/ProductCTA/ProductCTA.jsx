@@ -15,10 +15,15 @@ export default function ProductCTA({ leftColor = 'var(--watermelon)', text, ctaL
 
   return (
     <section className={styles.cta}>
-      <div className={styles.left} style={{ background: leftColor }}>
+      <button
+        type="button"
+        className={styles.left}
+        style={{ background: leftColor }}
+        onClick={() => openModal('contacto')}
+      >
         <p className={styles.text}>{text}</p>
-        <button className={styles.btn} onClick={() => openModal('contacto')}>{ctaLabel}</button>
-      </div>
+        <span className={styles.btn}>{ctaLabel}</span>
+      </button>
       <LazyBg src={photo} className={styles.right} />
     </section>
   )
